@@ -14,12 +14,10 @@ read -p "Volume (0-130): " vol
 if [ -z "$link" ]; then
   echo "Link tidak boleh kosong."
   exit 1
-fi
+if
 
-if [ -z "$vol" ]; then
-  vol=100  
-fi
-
+wget 'https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp' -O $PREFIX/bin/yt-dlp
+        chmod a+rx $PREFIX/bin/yt-dlp
 
 tmpfile=$(mktemp)
 
